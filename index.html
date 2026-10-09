@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Collection Master File | Agency Training Guide</title>
+<style>
+:root{--navy:#152b49;--blue:#2563eb;--teal:#0f766e;--ink:#172033;--muted:#627086;--line:#dce3ec;--bg:#f3f6fa;--white:#fff;--amber:#fff4d6;--red:#fff0ef}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 Arial,Helvetica,sans-serif}
+header{background:linear-gradient(120deg,#132641,#1d4c76);color:white;padding:38px 22px 30px}
+.wrap{max-width:1180px;margin:auto}.eyebrow{text-transform:uppercase;letter-spacing:2px;font-size:12px;font-weight:bold;color:#b8d9ff}
+h1{font-size:clamp(30px,4vw,46px);line-height:1.12;margin:10px 0}header p{max-width:760px;color:#e0eaf6;margin:12px 0 0;font-size:17px}
+nav{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10;overflow-x:auto;white-space:nowrap;padding:10px max(18px,calc((100% - 1180px)/2))}
+nav a{display:inline-block;text-decoration:none;color:var(--navy);font-weight:bold;font-size:13px;padding:8px 10px;border-radius:7px}nav a:hover{background:#eaf1fb}
+main{max-width:1180px;margin:24px auto;padding:0 18px}.hero-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:22px}
+.stat,.panel,.category-card{background:var(--white);border:1px solid var(--line);border-radius:13px;padding:18px;box-shadow:0 3px 12px #19345608}
+.stat strong{display:block;font-size:22px;color:var(--navy)}.stat span{color:var(--muted);font-size:13px}
+section{margin:26px 0;scroll-margin-top:72px}h2{font-size:25px;color:var(--navy);margin:0 0 12px}h3{color:var(--navy);margin:0 0 8px}
+.lead{color:var(--muted);margin-top:-4px}
+.callout{padding:14px 16px;border-left:4px solid var(--blue);background:#eaf2ff;border-radius:8px;margin:14px 0}
+.warning{padding:14px 16px;border-left:4px solid #d97706;background:var(--amber);border-radius:8px;margin:14px 0}
+.controls{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0}.controls input,.controls select{font:inherit;border:1px solid #cbd5e1;background:white;border-radius:9px;padding:11px 12px;min-width:190px}
+button{font:inherit;cursor:pointer;border:0;border-radius:8px;padding:10px 14px;background:var(--blue);color:#fff;font-weight:bold}button.secondary{background:#e8edf5;color:var(--navy)}
+.table-wrap{overflow:auto;background:#fff;border:1px solid var(--line);border-radius:12px}
+table{border-collapse:collapse;width:100%;min-width:720px}th,td{text-align:left;padding:12px 13px;border-bottom:1px solid #e8edf3;vertical-align:top}th{background:#eaf0f8;color:var(--navy);font-size:13px;position:sticky;top:0}td:first-child{font-family:Consolas,Monaco,monospace;font-size:13px;color:#174ea6;font-weight:bold;white-space:nowrap}tr:last-child td{border-bottom:0}tbody tr:hover{background:#f8fbff}.count{font-size:13px;color:var(--muted);margin:8px 0}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.category-card p{margin:6px 0;color:var(--muted)}.pill{display:inline-block;background:#e4f5f2;color:#08665f;padding:3px 8px;border-radius:99px;font-size:12px;font-weight:bold;margin-bottom:9px}
+.steps{counter-reset:step;list-style:none;padding:0}.steps li{counter-increment:step;position:relative;padding:4px 0 18px 48px}.steps li:before{content:counter(step);position:absolute;left:0;top:0;background:var(--navy);color:white;border-radius:50%;width:31px;height:31px;display:grid;place-items:center;font-weight:bold}
+.example{background:#f7f9fc;border:1px solid var(--line);padding:14px;border-radius:10px;margin:10px 0}.example strong{color:var(--navy)}
+.quiz-question{padding:16px 0;border-bottom:1px solid var(--line)}.quiz-question label{display:block;padding:5px 0;cursor:pointer}.feedback{font-weight:bold;margin-top:12px}
+footer{background:#132641;color:#dce7f5;padding:24px;text-align:center;margin-top:40px;font-size:13px}
+.small{font-size:13px;color:var(--muted)}.tag{font-size:11px;border-radius:4px;padding:2px 6px;background:#f0f2f5;color:#455468}
+@media(max-width:760px){.hero-grid,.grid2{grid-template-columns:1fr}.stat{padding:14px}main{padding:0 12px}header{padding:30px 18px}}
+@media print{nav,.controls,button{display:none!important}body{background:white}.panel,.stat,.category-card{box-shadow:none;break-inside:avoid}header{background:#152b49!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}main{max-width:none}}
+</style>
+</head>
+<body>
+<header>
+<div class="wrap">
+<div class="eyebrow">Agency Enablement • Collection Operations</div>
+<h1>Collection Master File<br>Training Guide</h1>
+<p>A practical guide to understanding loan-level data, repayment status, delinquency, calling and field activity, allocation ownership, and responsible next actions.</p>
+</div>
+</header>
+<nav>
+<a href="#overview">Overview</a><a href="#identifiers">Identifiers</a><a href="#loan">Loan & Payments</a><a href="#risk">Risk & Buckets</a><a href="#activity">Contact Activity</a><a href="#allocation">Allocation</a><a href="#workflow">Agent Workflow</a><a href="#examples">Examples</a><a href="#quiz">Knowledge Check</a>
+</nav>
+<main>
+<div class="hero-grid" id="overview">
+<div class="stat"><strong>Loan-level</strong><span>One row may represent one loan/drawdown, not the whole customer relationship.</span></div>
+<div class="stat"><strong>User-level</strong><span>Some fields identify the customer and combine information across active loans.</span></div>
+<div class="stat"><strong>Action-oriented</strong><span>Use the data to verify the account, understand overdue status, and plan a compliant next step.</span></div>
+</div>
+
+<section>
+<h2>1. How to use this guide</h2>
+<div class="panel">
+<p>Collection master files bring together account identifiers, loan balances, repayment information, delinquency indicators, contact history, and allocation ownership. Agents should read related fields together rather than relying on a single column.</p>
+<div class="callout"><strong>Core rule:</strong> Verify the correct loan and customer record, check the latest available payment and allocation data, review previous contact outcomes, then follow the approved agency SOP.</div>
+<p class="small">Field meanings below are based on the definitions supplied for this training. Where source-system logic can vary, confirm the interpretation with the operations/data owner before using it for decisions.</p>
+</div>
+</section>
+
+<section id="identifiers">
+<h2>2. Loan, customer and contact identifiers</h2>
+<p class="lead">Use identifiers to locate the correct record and avoid mixing up different loans belonging to the same customer.</p>
+<div class="controls"><input id="search" type="search" placeholder="Search field or meaning…"><select id="category"><option value="all">All categories</option></select><button class="secondary" onclick="resetFilters()">Reset</button></div>
+<div class="count" id="count"></div>
+<div class="table-wrap"><table><thead><tr><th>Field</th><th>Meaning / definition</th><th>How an agent should use it</th></tr></thead><tbody id="fieldRows"></tbody></table></div>
+</section>
+
+<section id="loan">
+<h2>3. Loan and repayment fields</h2>
+<div class="grid2">
+<div class="category-card"><span class="pill">Outstanding vs overdue</span><h3>POS / Opening POS</h3><p><strong>POS</strong> is the current outstanding amount for the loan as represented in the source system. <strong>Opening POS</strong> is the outstanding amount at the beginning of the month.</p><p>Do not assume either amount is the overdue amount.</p></div>
+<div class="category-card"><span class="pill">Amount to regularise</span><h3>Collectable / Total collectable</h3><p><strong>Collectable</strong> is the overdue amount to be collected to regularise this loan. <strong>Total collectable</strong> aggregates overdue amounts across the customer's active loans.</p><p>Confirm the applicable account and approved payment instructions before communicating an amount.</p></div>
+<div class="category-card"><span class="pill">Monthly commitment</span><h3>EMI amount / EMI date</h3><p>The EMI amount is the scheduled monthly instalment; EMI date is the customer's selected repayment date, typically between the 2nd and 7th according to the supplied definition.</p></div>
+<div class="category-card"><span class="pill">Repayment progress</span><h3>Paid this month / Number of EMI paid</h3><p>Paid this month records the amount paid during the current month. Number of EMI paid records the instalments paid against the loan tenure.</p><p>Check the latest payment date and system update before treating a customer as unpaid.</p></div>
+</div>
+<div class="warning"><strong>Important data check:</strong> A payment may have been made recently but not yet reflected in a file snapshot. If the customer disputes the overdue amount or reports a recent payment, follow the payment-verification/escalation process rather than insisting the file must be correct.</div>
+</section>
+
+<section id="risk">
+<h2>4. Delinquency and repayment-risk indicators</h2>
+<div class="table-wrap"><table><thead><tr><th>Field</th><th>What it tells you</th><th>Training interpretation</th></tr></thead><tbody>
+<tr><td>bom_bucket</td><td>Beginning-of-month bucket assigned when the case is allocated; defined as fixed until month-end.</td><td>Use it as the month-start reference, not necessarily today's delinquency status.</td></tr>
+<tr><td>current_bucket</td><td>Current DPD/delinquency bucket as defined by the source.</td><td>Use it to understand current ageing, but confirm the bucket mapping and refresh timing in the SOP.</td></tr>
+<tr><td>fpd_spd_tpd</td><td>Indicates missed first, second or third payment due, as encoded by the source.</td><td>Potentially important early-payment-risk flag. Verify the actual code values; do not infer a code meaning that is not documented.</td></tr>
+<tr><td>user_decile</td><td>Internal ranking from 0 to 10 based on credit/repayment behaviour; the supplied definition says lower is better and higher values above 5 indicate less stable history.</td><td>A contextual risk indicator, not proof of a customer's present ability or willingness to pay. Follow policy and avoid judgemental language.</td></tr>
+<tr><td>delinquency_string</td><td>Bucket movement over the last six months.</td><td>Review whether the account has been improving, worsening or remaining in a similar state.</td></tr>
+<tr><td>roll_rate</td><td>Code for the previous month's repayment status. Examples supplied: RB, RF, NM, ST.</td><td>Use only with your organisation's official code dictionary. Do not assume an undocumented code mapping.</td></tr>
+<tr><td>l6m_dpd_movement</td><td>Six-month history of roll-rate codes.</td><td>Provides trend context; compare it with the latest bucket and payment information.</td></tr>
+<tr><td>resolution</td><td>Monthly status: Resolved if payment is equal to or greater than one EMI; otherwise Flow, according to the supplied rule.</td><td>Understand this as a defined monthly status, not a guarantee that all loans of the customer are regularised.</td></tr>
+</tbody></table></div>
+<div class="callout"><strong>Bucket reminder:</strong> DPD means “Days Past Due.” A bucket is a grouping of delinquency ageing. Use the official bucket ranges from your SOP; they are not specified in this guide.</div>
+</section>
+
+<section id="activity">
+<h2>5. Calling and field visit activity</h2>
+<div class="table-wrap"><table><thead><tr><th>Field</th><th>Meaning</th><th>Agent action</th></tr></thead><tbody>
+<tr><td>calling_latest_disp_code</td><td>Most recent call disposition in the user's call trail.</td><td>Review the latest outcome before making another attempt.</td></tr>
+<tr><td>calling_best_disp_code</td><td>Best call disposition for the current month, based on call trails.</td><td>Use as a monthly summary; it may not be the most recent outcome.</td></tr>
+<tr><td>field_calling_attempts</td><td>Defined as total calls attempted for the loan account.</td><td>Check the field definition with the data owner because the name may be confused with field visits.</td></tr>
+<tr><td>best_field_disposition</td><td>Best visit disposition in the current month based on visit trails.</td><td>Review the most useful recorded field outcome, subject to the disposition dictionary.</td></tr>
+<tr><td>latest_field_disposition</td><td>Most recent visit disposition based on visit trails.</td><td>Use to understand the latest visit outcome and plan the next permitted action.</td></tr>
+<tr><td>field_visit_attempts</td><td>Defined in the supplied data as total calls attempted for the loan account.</td><td><strong>Confirm this definition:</strong> the field name suggests visits, but the provided description says calls. Do not rely on it until clarified.</td></tr>
+</tbody></table></div>
+<div class="warning"><strong>Disposition discipline:</strong> Always use the approved disposition list and record the outcome accurately. Do not mark a successful contact, promise to pay, visit, or resolution unless it actually occurred and meets the SOP definition.</div>
+</section>
+
+<section id="allocation">
+<h2>6. Allocation, agency and ownership</h2>
+<div class="table-wrap"><table><thead><tr><th>Field</th><th>Meaning</th><th>How it helps</th></tr></thead><tbody>
+<tr><td>handover_date</td><td>Date the loan account was allocated to an agency.</td><td>Helps establish allocation timing and ownership history.</td></tr>
+<tr><td>field_agency_name / agency_id</td><td>Agency name and unique agency identifier assigned to the loan.</td><td>Confirm the case belongs to your agency before actioning it.</td></tr>
+<tr><td>fe_name / agent_id</td><td>Assigned field agent's name and unique internal ID.</td><td>Confirms field ownership; escalate mismatches through the allocation process.</td></tr>
+<tr><td>teleCaller_name / telecaller_id</td><td>Assigned telecaller name and unique internal ID.</td><td>Confirms telecalling ownership and supports work allocation.</td></tr>
+<tr><td>allocation_id</td><td>Unique allocation identifier, typically combining Loan ID and PIN code.</td><td>Use for allocation-level tracking; do not treat it as a substitute for loan_id.</td></tr>
+<tr><td>collection_city / pincode_1</td><td>Primary city and PIN code of the user's location/address.</td><td>Supports routing and address-based allocation; verify location details according to policy.</td></tr>
+<tr><td>priority</td><td>Priority of the collection city based on address availability or traced location.</td><td>Use the defined priority scheme and approved work queue rules.</td></tr>
+<tr><td>masterfile_date</td><td>Date the master file was generated.</td><td>Check freshness before acting; a snapshot may not show the latest payment or allocation changes.</td></tr>
+<tr><td>product</td><td>Lending partner through which the loan was disbursed.</td><td>Check partner-specific process or escalation requirements where applicable.</td></tr>
+</tbody></table></div>
+</section>
+
+<section id="workflow">
+<h2>7. Recommended agent workflow</h2>
+<div class="panel">
+<ol class="steps">
+<li><strong>Confirm the record.</strong><br>Check loan_id, bank_tl, product and the approved customer verification process.</li>
+<li><strong>Check file freshness and ownership.</strong><br>Review masterfile_date, handover_date, agency and assigned agent/telecaller details.</li>
+<li><strong>Understand the loan position.</strong><br>Review EMI amount/date, POS, collectable, total collectable, last payment date and paid-this-month value.</li>
+<li><strong>Review delinquency and prior contact.</strong><br>Check current_bucket, bom_bucket, repayment movement and latest call/field dispositions.</li>
+<li><strong>Choose the next permitted action.</strong><br>Use approved prioritisation rules, contact cadence, customer communication standards and escalation paths.</li>
+<li><strong>Record the outcome accurately.</strong><br>Update the correct disposition and notes in the authorised system. Never expose internal IDs or unnecessary personal data to the customer.</li>
+</ol>
+</div>
+</section>
+
+<section id="examples">
+<h2>8. Practical examples</h2>
+<div class="panel">
+<div class="example"><strong>Example A — Outstanding is not the same as overdue</strong><p>A file shows POS ₹30,000 and collectable ₹4,000. Explain internally that ₹30,000 is the outstanding loan balance as represented by the system, while ₹4,000 is the overdue amount identified for regularisation. Confirm the live system before quoting a payable amount.</p></div>
+<div class="example"><strong>Example B — Payment reported after file generation</strong><p>The masterfile_date is two days old and last_payment_date appears older than the payment the customer says they made yesterday. Check the authorised payment ledger or raise a verification request before continuing collection activity.</p></div>
+<div class="example"><strong>Example C — BOM bucket and current bucket differ</strong><p>bom_bucket reflects the bucket at allocation/month start; current_bucket reflects the current bucket according to the supplied definition. A difference can indicate movement during the month. Confirm system refresh and bucket logic before interpreting it.</p></div>
+<div class="example"><strong>Example D — Multiple active loans</strong><p>total_collectable and total_pos are customer-level aggregates across active loans. collectable and POS are specific to the loan record. Always identify the relevant loan before discussing an account-level amount.</p></div>
+<div class="example"><strong>Example E — Previous contact outcome</strong><p>If calling_latest_disp_code shows a recent contact outcome, review the notes and follow the permitted contact cadence. Do not repeat contact unnecessarily or misrepresent an earlier promise or outcome.</p></div>
+</div>
+</section>
+
+<section>
+<h2>9. Data privacy and professional conduct</h2>
+<div class="grid2">
+<div class="category-card"><h3>Protect customer information</h3><p>Use customer data only for authorised collection activity. Do not share phone numbers, DOB, email, internal IDs, or loan details with unauthorised persons.</p></div>
+<div class="category-card"><h3>Communicate respectfully</h3><p>Be factual and professional. Do not threaten, shame, harass, disclose debt to unrelated third parties, or make unsupported claims about consequences.</p></div>
+<div class="category-card"><h3>Verify before acting</h3><p>When information conflicts, use approved systems and escalation routes. A master file is a snapshot, not necessarily a real-time ledger.</p></div>
+<div class="category-card"><h3>Keep records accurate</h3><p>Never fabricate call attempts, visits, promises to pay, payments, or dispositions. Follow client, agency, and applicable regulatory requirements.</p></div>
+</div>
+</section>
+
+<section id="quiz">
+<h2>10. Knowledge check</h2>
+<p class="lead">Choose one answer for each question, then select “Check answers.”</p>
+<div class="panel" id="quizPanel">
+<div class="quiz-question"><strong>1. Which field is defined as the overdue amount for a particular loan?</strong>
+<label><input type="radio" name="q1" value="a"> POS</label><label><input type="radio" name="q1" value="b"> collectable</label><label><input type="radio" name="q1" value="c"> opening_pos</label></div>
+<div class="quiz-question"><strong>2. What does masterfile_date help an agent check?</strong>
+<label><input type="radio" name="q2" value="a"> Customer's date of birth</label><label><input type="radio" name="q2" value="b"> The file generation date and likely freshness of the snapshot</label><label><input type="radio" name="q2" value="c"> Number of EMIs in the tenure</label></div>
+<div class="quiz-question"><strong>3. The customer says they paid yesterday, but the file does not show it. What should the agent do?</strong>
+<label><input type="radio" name="q3" value="a"> Insist that the file is always correct</label><label><input type="radio" name="q3" value="b"> Record a payment without checking</label><label><input type="radio" name="q3" value="c"> Verify using the authorised process before proceeding</label></div>
+<div class="quiz-question"><strong>4. Which is a customer-level aggregate across active loans, according to the supplied definition?</strong>
+<label><input type="radio" name="q4" value="a"> total_collectable</label><label><input type="radio" name="q4" value="b"> loan_name</label><label><input type="radio" name="q4" value="c"> emi_date</label></div>
+<div class="quiz-question"><strong>5. What should an agent do when a field definition appears inconsistent with its name?</strong>
+<label><input type="radio" name="q5" value="a"> Guess the meaning</label><label><input type="radio" name="q5" value="b"> Confirm it with the data owner/SOP</label><label><input type="radio" name="q5" value="c"> Ignore all other fields</label></div>
+<button onclick="checkQuiz()">Check answers</button> <button class="secondary" onclick="resetQuiz()">Try again</button>
+<div id="quizFeedback" class="feedback" aria-live="polite"></div>
+</div>
+</section>
+
+<section>
+<h2>11. Master field dictionary</h2>
+<p class="lead">Search all supplied field definitions below. The “Agent use” column is a training aid and does not replace your internal SOP.</p>
+<div class="controls"><input id="search2" type="search" placeholder="Search full field dictionary…"><button class="secondary" onclick="document.getElementById('search2').value='';renderDictionary()">Clear</button></div>
+<div class="count" id="count2"></div>
+<div class="table-wrap"><table><thead><tr><th>Field</th><th>Meaning</th><th>Agent use / note</th></tr></thead><tbody id="dictionaryRows"></tbody></table></div>
+</section>
+</main>
+<footer><div class="wrap">Collection Agency Training • Internal training aid • Follow the latest approved client and agency SOP at all times.</div></footer>
+<script>
+const fields = [
+["loan_id","Identifiers","A loan-level unique numeric identifier is generated because the Encollect database does not support alphanumeric data.","Use to locate the specific loan record; do not confuse with a customer-level ID."],
+["bank_tl","Identifiers","A unique alphanumeric identifier generated at loan level when a loan is withdrawn and a transaction ledger (TL) is created. The user can see the Bank TL under the loan section.","Useful for matching a loan transaction/ledger."],
+["user_id","Identifiers","A unique alphanumeric ID generated when a user first downloads the CRED app and completes the login journey. It is for internal identity and activity tracking; the user does not see this ID.","Internal reference only; do not disclose unnecessarily."],
+["bank_crn","Identifiers","A one-time user-level ID generated at the first loan disbursement to identify and track loan-related transactions with the CRED system.","Useful for matching customer-level loan relationships."],
+["product","Allocation & ownership","The lending partner through which a user's loan is disbursed.","Check partner-specific process requirements."],
+["customer_name","Customer & contact","The user's full name as provided during the first CRED app login; used for identification, display and communications.","Follow approved customer verification procedures."],
+["phone_number","Customer & contact","Primary mobile number used at first login and verified by OTP; used for authentication, notifications and communication.","Use only in authorised contact activity."],
+["phone_number_2","Customer & contact","An alternate contact number for the user.","Use only when permitted by policy and verification rules."],
+["phone_number_3","Customer & contact","An alternate contact number for the user.","Use only when permitted by policy and verification rules."],
+["email_address","Customer & contact","Primary email associated with the account for authentication, notifications, alerts and communication.","Protect customer data; use approved channels."],
+["date_of_birth","Customer & contact","Date of birth fetched using PAN details; the supplied definition says DOB and name reflect PAN records.","Sensitive personal data; access only when necessary and authorised."],
+["loan_name","Loan & repayment","A name the user may assign to a loan at withdrawal. If blank, the system assigns a default such as draw 1, draw 2, draw 3.","Helps distinguish multiple drawdowns; not a unique loan ID."],
+["bom_bucket","Delinquency & risk","Beginning-of-month bucket assigned when a case is allocated to the field; described as remaining the same through month-end.","Month-start reference; not necessarily current status."],
+["current_bucket","Delinquency & risk","Current DPD (Days Past Due) bucket of the loan. The supplied definition says it remains unchanged without payment and updates based on EMIs paid.","Confirm bucket ranges and refresh logic in the SOP."],
+["user_decile","Delinquency & risk","Internal ranking based on financial behaviour and credit/loan payment history, ranging from 0 to 10. Supplied definition: lower indicates better repayment behaviour; values above 5 indicate less stable history.","Use as context only, not as a standalone decision or judgement."],
+["loan_insurance","Loan & repayment","Indicates whether loan insurance was opted for: 1 means opted; 0 means not opted, according to the supplied definition.","Do not infer coverage or claim eligibility from this flag alone."],
+["fpd_spd_tpd","Delinquency & risk","First Payment Due, Second Payment Due, Third Payment Due; indicates missed first, second or third EMI according to the supplied definition.","Confirm exact encoding and values with the data dictionary."],
+["tenure","Loan & repayment","Number of monthly instalments selected to repay the loan amount.","Use to understand the scheduled repayment term."],
+["months_passed","Loan & repayment","Number of months elapsed out of the overall loan tenure.","Compare with tenure and repayment history."],
+["emi_date","Loan & repayment","Date selected by the customer to repay the EMI, typically between the 2nd and 7th of the current month per supplied definition.","Check current schedule and product rules."],
+["disbursal_date","Loan & repayment","Date the loan was taken and funds were credited to the customer's account.","Helps establish loan timeline."],
+["whitelisting_date","Loan & repayment","Date the user was whitelisted on CRED for a loan and offered an available limit to withdraw.","A loan journey milestone; not the disbursal date."],
+["handover_date","Allocation & ownership","Date the particular loan account was allocated to the agency.","Use to confirm allocation timeline."],
+["last_payment_date","Loan & repayment","Most recent date the user paid against the particular loan.","Verify against the live payment ledger if disputed."],
+["number_of_emi_paid","Loan & repayment","Number of EMIs paid by the customer out of the overall tenure.","Check with payment status and current system data."],
+["pos","Loan & repayment","Current outstanding amount on the particular loan, described as total pending EMI amount in the supplied definition.","Do not treat as identical to overdue collectable; confirm the system's POS calculation."],
+["opening_pos","Loan & repayment","Outstanding amount on the loan at the beginning of the month.","Useful for month-on-month comparison; not the overdue amount."],
+["loan_amount","Loan & repayment","Loan amount taken by the customer.","Original amount; may differ from current outstanding."],
+["emi_amount","Loan & repayment","Monthly instalment amount defined for the particular loan.","Use the current schedule and verify before quoting."],
+["collectable","Loan & repayment","Overdue amount of the particular loan to be collected to normalise the loan account.","Loan-level overdue figure; verify current payable amount."],
+["total_collectable","Loan & repayment","Overdue amount across all active loans of the user to normalise all loan accounts.","Customer-level aggregate; confirm which loan/account a discussion concerns."],
+["paid_this_month","Loan & repayment","Amount the customer has paid in the current month.","Check date, ledger and file freshness."],
+["resolution","Delinquency & risk","Monthly status marked Resolved if payment is equal to or greater than one EMI; otherwise Flow, according to the supplied definition.","Understand as the source's monthly rule; does not automatically mean all loans are regularised."],
+["total_loans","Loan & repayment","Total number of active loans the customer currently has.","Helps identify multiple active loans."],
+["total_pos","Loan & repayment","Total outstanding amount across all active loans of the customer.","Customer-level outstanding aggregate; not the same as total overdue."],
+["calling_latest_disp_code","Contact activity","Most recent call disposition of the user based on call trails.","Review before a new call and follow contact cadence."],
+["calling_best_disp_code","Contact activity","Best call disposition in the current month based on call trails.","Monthly summary; may differ from latest outcome."],
+["field_calling_attempts","Contact activity","Supplied definition: total calls attempted for the particular loan account.","Confirm naming and source logic with the data owner."],
+["best_field_disposition","Contact activity","Best visit disposition in the current month based on visit trails.","Use approved disposition dictionary."],
+["latest_field_disposition","Contact activity","Most recent visit disposition in the current month based on visit trails.","Check latest recorded field outcome."],
+["field_visit_attempts","Contact activity","Supplied definition says total number of calls attempted for the particular loan account.","Potential definition mismatch: confirm whether this counts visits or calls."],
+["collection_city","Allocation & ownership","Primary city of the user's location/address.","Supports routing; verify according to policy."],
+["pincode_1","Allocation & ownership","Primary PIN code of the user's location.","Supports allocation and routing; handle location data carefully."],
+["field_agency_name","Allocation & ownership","Name of the agency assigned to the particular loan account.","Confirm ownership before acting."],
+["fe_name","Allocation & ownership","Name of the field agent assigned to the particular loan.","Confirm field assignment."],
+["teleCaller_name","Allocation & ownership","Name of the telecaller assigned to the particular loan.","Confirm telecalling assignment."],
+["masterfile_date","File & allocation control","Generation date of the master file.","Check file freshness before using status or payment information."],
+["agent_id","Allocation & ownership","Unique internal field-agent identification code for the agent assigned to a loan.","Internal tracking identifier."],
+["telecaller_id","Allocation & ownership","Unique internal telecaller identification code for the telecaller assigned to a loan.","Internal tracking identifier."],
+["agency_id","Allocation & ownership","Unique internal agency identification code for the agency assigned to a loan.","Internal tracking identifier."],
+["delinquency_string","Delinquency & risk","Bucket movement of the user over the last six months.","Use to understand trends; confirm encoding."],
+["roll_rate","Delinquency & risk","Code defining the user's previous-month repayment status. Supplied examples include RB (Rollback), RF (Roll Forward), NM (Normalised), ST (Stab).","Use the official code dictionary; confirm exact definitions."],
+["l6m_dpd_movement","Delinquency & risk","Last six months of roll-rate codes used to understand payment behaviour.","Trend indicator; interpret with the approved mapping."],
+["allocation_id","Allocation & ownership","Unique identifier used for agency case allocation, typically a combination of Loan ID and PIN code.","Use for allocation tracking; not a replacement for loan_id."],
+["priority","Allocation & ownership","Priority of the user's collection city based on address availability or traced location.","Apply approved queue/prioritisation rules."]
+];
+const catEl=document.getElementById('category');
+[...new Set(fields.map(x=>x[1]))].forEach(c=>{const o=document.createElement('option');o.value=c;o.textContent=c;catEl.appendChild(o)});
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function renderMain(){
+ const q=document.getElementById('search').value.toLowerCase(), cat=catEl.value;
+ const arr=fields.filter(f=>(cat==='all'||f[1]===cat)&&f.join(' ').toLowerCase().includes(q));
+ document.getElementById('fieldRows').innerHTML=arr.map(f=>`<tr><td>${esc(f[0])}</td><td><span class="tag">${esc(f[1])}</span><br>${esc(f[2])}</td><td>${esc(f[3])}</td></tr>`).join('');
+ document.getElementById('count').textContent=`Showing ${arr.length} of ${fields.length} fields`;
+}
+function renderDictionary(){
+ const q=document.getElementById('search2').value.toLowerCase();
+ const arr=fields.filter(f=>f.join(' ').toLowerCase().includes(q));
+ document.getElementById('dictionaryRows').innerHTML=arr.map(f=>`<tr><td>${esc(f[0])}</td><td>${esc(f[2])}</td><td>${esc(f[3])}</td></tr>`).join('');
+ document.getElementById('count2').textContent=`Showing ${arr.length} of ${fields.length} fields`;
+}
+function resetFilters(){document.getElementById('search').value='';catEl.value='all';renderMain()}
+document.getElementById('search').addEventListener('input',renderMain);catEl.addEventListener('change',renderMain);document.getElementById('search2').addEventListener('input',renderDictionary);
+function checkQuiz(){
+ const answers={q1:'b',q2:'b',q3:'c',q4:'a',q5:'b'};let score=0,answered=0;
+ for(const [q,a] of Object.entries(answers)){const el=document.querySelector(`input[name="${q}"]:checked`);if(el){answered++;if(el.value===a)score++}}
+ const fb=document.getElementById('quizFeedback');
+ if(answered<5){fb.textContent=`You answered ${answered} of 5 questions. Please answer all questions before checking.`;fb.style.color='#b45309';return}
+ fb.textContent=`Your score: ${score}/5. ${score===5?'Excellent — you understand the key concepts.':'Review the relevant sections and try again.'}`;fb.style.color=score===5?'#0f766e':'#b45309';
+}
+function resetQuiz(){document.querySelectorAll('#quizPanel input[type=radio]').forEach(x=>x.checked=false);document.getElementById('quizFeedback').textContent=''}
+renderMain();renderDictionary();
+</script>
+</body>
+</html>
